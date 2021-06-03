@@ -1,0 +1,432 @@
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color:#D2D5DD;
+}
+
+.page-wrapper {
+  min-height: 100%;
+}
+
+.banner{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url("images/foodbank.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.logo{
+  width: 120px;
+  cursor: pointer;
+}
+
+.navbar{
+  width: 85%;
+  margin: auto;
+  padding-block-end: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  padding: 44px 26px;
+}
+
+.navbar ul li a::after{
+  content:'';
+  background: #009688;
+  height: 3px;
+  bottom: 0;
+  width: 0%;
+  right: 50%;
+  transform: translateX(50%);
+  position: absolute;
+  transition: .5s;
+}
+.navbar ul li a:hover::after{
+  width: 100%;
+}
+
+.navbar ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.content{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+
+}
+.content h1{
+  font-size:70px;
+  margin-top: 80px;
+}
+
+.content p{
+  margin:20px auto;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+button{
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.span-fill{
+background: #009688;
+height: 100%;
+width: 0%;
+border-radius: 25px;
+position: absolute;
+left: 0;
+bottom: 0;
+z-index: -1;
+transition: 0.5s;
+}
+
+button:hover .span-fill{
+  width: 100%;
+}
+button:hover{
+  border: none;
+}
+
+.about-us{
+  width: 80%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+
+}
+
+.about-col{
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+
+.about-col img{
+  width: 100%;
+}
+
+/*Slideshow Container*/
+.slideshow-container {
+  background-color: #888;
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  height: 400px;
+}
+
+/*Slideshow for images*/
+.slideshow-container img {
+  width: 86%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*Styles for both slide number and slide caption*/
+.slideNumber, .slideCaption {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  margin: 5px 0;
+}
+
+/*Number for slideshow images*/
+.slideNumber {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/*Caption for slideshow images*/
+.slideCaption {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*Slideshow Arrows*/ 
+.previousArrow, .nextArrow {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  font-size: 58px;
+  transform: translateY(-50%);
+  width: auto;
+  font-weight: bold;
+  background-color: #111;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+/*Background hover effect for slideshow arrows*/
+.previousArrow:hover, .nextArrow:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/*Position next arrow to the right*/
+.nextArrow {
+  right: 0;
+}
+
+/*Max width for both slideshow container and slide circle container*/
+.slideCircle-container, .slideshow-container {
+  max-width: 800px;
+}
+
+/*Container for slide circle in beige color*/
+.slideCircle-container {
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+}
+
+/*Slide circle styled in yellow*/
+.slideCircle {
+  border-radius: 50%;
+  background-color: #fcf600;
+  height: 15px;
+  width: 15px;
+  margin: 0 8px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+/*Changes color when you hover over slide circles*/
+.slideCircle:hover, .active {
+  background-color: #999;
+}
+
+/*Slideshow Fading Animation*/
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*Contact Form CSS*/
+.contact-form-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 15px auto;
+  background-color: #bbb;
+  padding: 10px;
+  border-radius: 8px;
+  border: 4px solid var(--bgcolor);
+}
+
+input, label, textarea {
+  margin: 10px;
+}
+
+.contact-form label {
+  font-family: 'Vesper Libre', serif;
+  font-size: 18px;
+}
+
+.contact-form input {
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  font-size: 1.25em;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  max-height: 200px;
+  min-height: 50px;
+}
+
+/*Changes outline color for input:focus*/
+.contact-form input:focus {
+  outline: 2px solid rgb(14, 137, 238);
+}
+/*Footer*/
+.footer {
+  background-color: #303036;
+  color: #d3d3d3;
+  height: 400px;
+  position: relative;
+}
+
+.footer-content {
+  height: 350px;
+  display: flex;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 25px;
+}
+
+.footer .footer-content h1,
+.footer .footer-content h2 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.footer .footer-content .about .contact-info span {
+  display: block;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.footer .footer-content .socials a {
+  border: 2px solid gray;
+  display: inline-block;
+  font-size: 1.3em;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding-top: 7px;
+  text-align: center;
+  width: 45px;
+  height: 41px;
+  transition: all .3s;
+}
+
+.footer .footer-content .socials a:hover {
+  background-color: white;
+} 
+
+.footer .footer-content .links ul a {
+  display: block;
+  margin: 0 0 10px 15px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #fff;
+  transition: all .3s;
+}
+
+.footer .footer-content .links ul a:hover {
+  margin-left: 30px;
+}
+
+.footer .contact-us-form form{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.footer .contact-us-form form input {
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer .contact-us-form form textarea {
+  resize: vertical;
+  max-height: 130px;
+  min-height: 100px;
+}
+
+.footer .footer-content .contact-us-form .contact-input {
+  color: #bebdbd;
+  background-color: #272727;
+  padding: .5rem;
+  font-family: monospace;
+}
+
+.footer .contact-us-form form button {
+  background-color: initial;
+  border-radius: 0px;
+  margin: 10px auto;
+  width: 100px;
+}
+
+.footer .contact-us-form form button:hover {
+  background-color: #999;
+  border: 2px solid #009688;
+}
+
+.footer-copy {
+  height: 50px;
+  background-color: #343a40;
+  color: #686868;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 20px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 902px) {
+  .footer {
+    height: auto;
+  }
+
+  .footer-content {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .footer .contact-us-form {
+    padding-bottom: 75px;
+  }
+}
